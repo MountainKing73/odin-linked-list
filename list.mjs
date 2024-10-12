@@ -54,6 +54,27 @@ class LinkedList {
     return this.tail;
   }
 
+  at(index) {
+    if (index < 0) {
+      return null;
+    }
+
+    let ind = 0;
+    let value = null;
+
+    let current = this.head;
+    while (current != null && ind < index) {
+      ind++;
+      current = current.getNextNode();
+    }
+
+    if (current != null) {
+      value = current.getValue();
+    }
+
+    return value;
+  }
+
   toString() {
     let str = "";
     let current = this.head;
