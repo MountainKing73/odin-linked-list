@@ -46,6 +46,14 @@ class LinkedList {
     return size;
   }
 
+  head() {
+    return this.head;
+  }
+
+  tail() {
+    return this.tail;
+  }
+
   toString() {
     let str = "";
     let current = this.head;
