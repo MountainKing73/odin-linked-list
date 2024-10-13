@@ -123,6 +123,79 @@ class LinkedList {
     }
   }
 
+  insertAt(value, index) {
+    if (this.head === null && index != 0) {
+      throw "Invalid index";
+    }
+
+    if (index === 0) {
+      let newNode = new Node();
+      newNode.setValue(value);
+      newNode.setNextNode(this.head);
+      this.head = newNode;
+      if (this.tail === null) {
+        this.tail = newNode;
+      }
+      return;
+    }
+
+    let curr = this.head;
+    let pos = 0;
+
+    while (curr != null && pos < index - 1) {
+      if (pos === index) {
+        break;
+      } else {
+        curr = curr.getNextNode();
+        pos++;
+      }
+    }
+
+    if (curr === null) {
+      throw "Invalid index";
+    }
+    let newNode = new Node();
+    newNode.setValue(value);
+    newNode.setNextNode(curr.getNextNode());
+    curr.setNextNode(newNode);
+  }
+
+  removeAt(index) {
+    if (this.head === null) {
+      return null;
+    }
+    if (index < 0) {
+      return null;
+    }
+
+    if (index === 0) {
+      if (this.head === this.tail) {
+        this.tail = null;
+      }
+      let val = this.head.getValue();
+      this.head = this.head.getNextNode();
+      return val;
+    }
+
+    let curr = this.head;
+    let prev = this.head;
+    let pos = 0;
+
+    while (curr != null && pos < index) {
+      prev = curr;
+      curr = curr.getNextNode();
+      pos++;
+    }
+
+    if (curr === null) {
+      return null;
+    }
+
+    let val = curr.getValue();
+    prev.setNextNode(curr.getNextNode());
+    return val;
+  }
+
   toString() {
     let str = "";
     let current = this.head;

@@ -4,6 +4,10 @@ const list = new LinkedList();
 
 list.append("dog");
 list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
 
 list.prepend("fish");
 
@@ -22,3 +26,10 @@ console.log("Find cow: " + list.find("cow"));
 
 console.log("Contains dog: " + list.contains("dog"));
 console.log("Contains cow: " + list.contains("cow"));
+
+list.insertAt("cow", 3);
+console.log(list.toString());
+
+val = list.removeAt(3);
+console.log("Removed value: " + val);
+console.log(list.toString());
