@@ -75,6 +75,30 @@ class LinkedList {
     return value;
   }
 
+  pop() {
+    if (this.head === null) {
+      return null;
+    }
+
+    let curr = this.head;
+
+    if (this.head === this.tail) {
+      const val = this.getValue();
+      this.head = null;
+      this.tail = null;
+      return val;
+    }
+
+    while (curr.getNextNode() != this.tail) {
+      curr = curr.getNextNode();
+    }
+
+    const val = curr.getNextNode().getValue();
+    curr.setNextNode(null);
+    this.tail = curr;
+    return val;
+  }
+
   toString() {
     let str = "";
     let current = this.head;
