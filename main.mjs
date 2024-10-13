@@ -16,3 +16,6 @@ console.log("at(1): " + list.at(1));
 let val = list.pop();
 console.log("Popped: " + val);
 console.log(list.toString());
+
+console.log("Find dog: " + list.find("dog"));
+console.log("Find cow: " + list.find("cow"));

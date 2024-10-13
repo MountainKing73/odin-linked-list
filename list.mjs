@@ -99,6 +99,21 @@ class LinkedList {
     return val;
   }
 
+  find(value) {
+    let curr = this.head;
+    let pos = 0;
+
+    while (curr != null) {
+      if (curr.getValue() === value) {
+        return pos;
+      }
+      pos++;
+      curr = curr.getNextNode();
+    }
+
+    return null;
+  }
+
   toString() {
     let str = "";
     let current = this.head;
