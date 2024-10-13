@@ -114,6 +114,15 @@ class LinkedList {
     return null;
   }
 
+  contains(value) {
+    const pos = this.find(value);
+    if (pos === null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   toString() {
     let str = "";
     let current = this.head;

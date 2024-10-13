@@ -19,3 +19,6 @@ console.log(list.toString());
 
 console.log("Find dog: " + list.find("dog"));
 console.log("Find cow: " + list.find("cow"));
+
+console.log("Contains dog: " + list.contains("dog"));
+console.log("Contains cow: " + list.contains("cow"));
